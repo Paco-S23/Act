@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <locale.h>
+ 
+
+int main() {
+    setlocale(LC_ALL, "spanish");
+
+    printf("\x1b[1mConversión de Temperaturas\x1b[0m\n\n");
+
+    float x1, result;
+    int opc;
+
+    printf(" \x1b[5m[1]\x1b[0m \x1b[3mCelsius a Fahrenheit\x1b[0m\n\n");
+    printf(" \x1b[5m[2]\x1b[0m \x1b[3mFahrenheit a Celsius\x1b[0m\n\n");
+
+    printf("¿Qué operación va a realizar? ");
+    scanf("%d", &opc);
+    
+    switch (opc) {
+        case 1:
+            printf("\nIngresa el valor en Grados Celsius: ");
+            scanf("%f", &x1);
+
+            result = (x1 * 9) / 5 + 32;
+            printf("\nResultado = %.2f Fahrenheit\n", result);
+            break;
+
+        case 2:
+            printf("\nIngresa el valor en Grados Fahrenheit: ");
+            scanf("%f", &x1);
+
+            result = (x1 - 32) * 5 / 9;
+            printf("\nResultado = %.2f Celsius\n", result);
+            break;
+
+        default:
+            printf("\nNo se ha seleccionado la opción correcta.\n");
+            break;
+    }
